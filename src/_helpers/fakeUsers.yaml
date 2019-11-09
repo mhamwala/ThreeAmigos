@@ -1,0 +1,29 @@
+[
+  {
+    username: "my",
+    password: "te",
+    firstName: "Musa",
+    lastName: "Hamwala",
+    id: 1,
+    isAdmin: true,
+    age: 24
+  },
+  {
+    username: "ty",
+    password: "te",
+    firstName: "steve",
+    lastName: "madden",
+    id: 2,
+    isAdmin: false,
+    age: 22
+  },
+  {
+    username: "st",
+    password: "te",
+    firstName: "steve",
+    lastName: "jobss",
+    id: 3,
+    isAdmin: false,
+    age: 23
+  }
+]
