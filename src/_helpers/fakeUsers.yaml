@@ -1,6 +1,6 @@
 [
   {
-    username: "my",
+    email: "my",
     password: "te",
     firstName: "Musa",
     lastName: "Hamwala",
@@ -9,7 +9,7 @@
     age: 24
   },
   {
-    username: "ty",
+    email: "ty",
     password: "te",
     firstName: "steve",
     lastName: "madden",
@@ -18,7 +18,7 @@
     age: 22
   },
   {
-    username: "st",
+    email: "st",
     password: "te",
     firstName: "steve",
     lastName: "jobss",
