@@ -1,31 +1,34 @@
 // array in local storage for registered users
 let users = JSON.parse(localStorage.getItem('users')) || [
     {
-      username: "my",
+      email: "my",
       password: "te",
       firstName: "Musa",
       lastName: "Hamwala",
       id: 1,
       isAdmin: true,
-      age: 24
+      address: "3 longfield road",
+      postcode: "HU2 0BS"
     },
     {
-      username: "ty",
+      email: "ty",
       password: "te",
       firstName: "steve",
       lastName: "madden",
       id: 2,
       isAdmin: false,
-      age: 22
+      address: "2 longfield road",
+      postcode: "HU2 0KS"
     },
     {
-      username: "st",
+      email: "st",
       password: "te",
       firstName: "steve",
       lastName: "jobss",
       id: 3,
       isAdmin: false,
-      age: 23
+      address: "20 longfield road",
+      postcode: "HU2 0BP"
     }
   ];
     
@@ -43,7 +46,7 @@ export function configureFakeBackend() {
 
                     // find if any user matches login credentials
                     let filteredUsers = users.filter(user => {                        
-                        return user.username === params.username && user.password === params.password;
+                        return user.email === params.email && user.password === params.password;
                     });
 
                     if (filteredUsers.length) {
@@ -51,17 +54,17 @@ export function configureFakeBackend() {
                         let user = filteredUsers[0];
                         let responseJson = {
                             id: user.id,
-                            username: user.username,
+                            email: user.email,
                             firstName: user.firstName,
                             lastName: user.lastName,
                             isAdmin: user.isAdmin,
-                            age: user.age,
+
                             token: 'fake-jwt-token'
                         };
                         resolve({ ok: true, text: () => Promise.resolve(JSON.stringify(responseJson)) });
                     } else {
                         // else return error
-                        reject('Username or password is incorrect');
+                        reject('email or password is incorrect');
                     }
 
                     return;
@@ -76,7 +79,6 @@ export function configureFakeBackend() {
                         // return 401 not authorised if token is null or invalid
                         reject('Unauthorised');
                     }
-
                     return;
                 }
 
